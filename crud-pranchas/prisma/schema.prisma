@@ -1,0 +1,26 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Prancha {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  modelo    String?
+  tamanho   String   // ex: 6'2
+  tipo      String   // shortboard, longboard, fish...
+  preco     Decimal? @db.Decimal(10,2)
+  status    String   @default("DISPONIVEL") // DISPONIVEL, VENDIDA
+  criadoEm  DateTime @default(now())
+  atualizadoEm DateTime @updatedAt
+}

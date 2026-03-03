@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD Pranchas</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>CRUD Pranchas</h1>
+
+    <!-- Formulário para criar prancha -->
+    <form id="formPrancha">
+      <input type="text" id="nome" placeholder="Nome" required>
+      <input type="text" id="modelo" placeholder="Modelo" required>
+      <input type="text" id="tamanho" placeholder="Tamanho" required>
+      <input type="text" id="tipo" placeholder="Tipo" required>
+      <input type="number" id="preco" placeholder="Preço" required>
+      <button type="submit">Adicionar Prancha</button>
+    </form>
+
+    <hr>
+
+    <!-- Lista de pranchas -->
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Modelo</th>
+          <th>Tamanho</th>
+          <th>Tipo</th>
+          <th>Preço</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="listaPranchas"></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
